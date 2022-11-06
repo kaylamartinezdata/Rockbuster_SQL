@@ -1,0 +1,13 @@
+Here is a SQL query wiht a common table expression:
+
+Select rating,
+    COUNT(film_id) AS count_of_ratings
+FROM film
+GROUP BY rating
+ORDER BY CASE rating
+    WHEN 'G' then 1
+    WHEN 'PG' then 2
+    WHEN 'PG-13' then 3
+    WHEN 'NC-17' then 4
+    else 5
+    end
