@@ -5,8 +5,5 @@ Analysis of the PostgreSQL Sample Database of a ficticous DVD rental company usi
 Rockbuster is a ficticious DVD rental company looking to break into the online video rental market. The aim of this analysis is to answer the business questions of the Management Board and provide the Business Intelligence department with data driven insights and recommendations to assist in their decision-making
 
 # Data
-The data is provided by Careerfoundry and is avialable [here](dvdrental (1).zip)
-
-
-
+The data is provided by Careerfoundry and is avialable [here](https://github.com/kaylamartinezdata/Rockbuster_SQL/blob/main/Rockbuster%20Overview.xlsx)
 
