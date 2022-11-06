@@ -1,0 +1,40 @@
+Here is a SQL query wiht a common table expression:
+
+# Rating Revenue
+Select rating,
+    COUNT(film_id) AS count_of_ratings
+FROM film
+GROUP BY rating
+ORDER BY CASE rating
+    WHEN 'G' then 1
+    WHEN 'PG' then 2
+    WHEN 'PG-13' then 3
+    WHEN 'NC-17' then 4
+    else 5
+    end
+
+# Genre Revenue
+SELECT category.name AS category,
+       COUNT(film_id) AS number_of_films,
+       SUM(payment.amount) AS total_revenue
+FROM category
+INNER JOIN film_category Using (category_id)
+INNER JOIN film Using (film_id)
+INNER JOin inventory Using (film_id)
+INNER JOIN rental Using (inventory_id)
+INNER JOIN payment Using (rental_id)
+GROUP BY category
+ORDER BY SUM(payment.amount) DESC;
+
+Top 10 Countries by Revenue
+SELECT country.country,
+    SUM(payment.amount) AS total_renenue
+FROM customer
+INNER JOIN payment Using (customer_id)
+INNER JOIN address Using (address_id)
+INNER JOin city Using (city_id)
+INNER JOIN country Using (country_id)
+GROUP BY country
+ORDER BY SUM(payment.amount) DESC
+LIMIT 10
+
